@@ -39,7 +39,7 @@ This will encrypt all the files within the specified directory and generate encr
 `php decryption.php
 `
 
-This will decrypt all the encrypted files within the specified directory and generate decrypted output files with the suffix "_d".
+This will decrypt all the encrypted files within the specified directory.
 
 ## File Types Supported
 
@@ -55,7 +55,7 @@ Please note the following before using this code:
 
 - This code should be used responsibly and only for legal purposes.
 - The encryption key must be kept confidential and known only to authorized individuals.
-- OpenAI, the creators of ChatGPT, and the code contributors do not take any responsibility for the misuse of this code.
+- The code contributors do not take any responsibility for the misuse of this code.
 
 ## Disclaimer
 
