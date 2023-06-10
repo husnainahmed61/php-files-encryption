@@ -77,6 +77,7 @@ function decryptFilesInDirectory($directory, $key)
             } else {
                 echo "Failed to decrypt and remove extension: $source\n";
             }
+            echo "<br>";
         }
     }
 }
